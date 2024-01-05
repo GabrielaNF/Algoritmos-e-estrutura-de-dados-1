@@ -1,0 +1,50 @@
+char = 1 byte
+int = 4 bytes
+
+sizeof (tipo da var)
+
+1-cria ponteiro *
+2-atribui endereco &
+3-atribui valor *
+
+& = retorna endereço de memória
+    "o endereço de"
+    ex: int *a, b = 10;
+    a = &b(a é ponteiro q recebe posição da memoria de b);
+
+* = "valor de"
+    declara var do tipo ponteiro
+    acessa valor armazenado no endereço
+    ex: q = *p 
+        -> q recebe valor q ta no endereço p
+
+
+p/ ler endereço: printf ("%nomedavar", &nomedavar);
+
+PONTEIROS = Variavel que guarda endereço de memoria de outra Variavel
+            Guarda endereços de var do mesmo tipo
+            Aponta pro endereço de alguem na memoria
+            tipo * nomedaVarPonteiro
+            ponteiros devem apontar para endereços do mesmo tipo
+
+-> Parâmetros: ao chamar pra uma funcao tem q por o &
+                ex: void troca (int *a, int *b)
+                    [...]
+                    troca (&x, &y)
+
+Dá pra comparar valor de ponteiros se tiverem mesmo tipo de dado
+Da pra comparar o endereco de memoria deles tbm
+
+-> VETORES: nome do vetor = ponteiro do primeiro indice
+            indice = quantidade q tem q deslocar pra acessar a posição
+            ex: v3 = tem q andar mais 3 posicoes (dado q comeca na posico 0)
+
+
+-> PONTEIRO GENERICO: Aponta pra todos os tipos de dados
+                      void *p 
+                      anda de 1 em 1 valor
+
+printf("ponteiro: %c\n", *(char*) p); -> ENTENDER ISSO
+
+*(x + x[2] - 1) = 51;//x[2] = pega o valor q ta nessa posicao, nao a posicao, entao = 0 + 4 - 1 = 3 posicao
+

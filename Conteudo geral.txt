@@ -1,0 +1,10 @@
+1) TAD, Arrays, Strings
+2) Recursão
+3) Lista estática, encadeada, duplamente encadeada e circular
+4) Alocação dinâmica, ponteiros. Pilhas e filas estaticas e dinamicas
+5) Pilhas: aplicação reversa polonesa
+6) Bibliotecas pra estrutura de dados
+7) Algoritmos de ordenação e pesquisa
+8) Matriz esparsa e implementação com listas ligadas
+9) Tabela HASH
+10) Organização de arquivos. Sequencial, direto, conceito de indexação de arquivos

@@ -1,0 +1,6 @@
+Alocacao estatica de matriz
+
+    sequencial na memoria
+    int mat[rows][columns]
+    ponteiro aponta pra ponteiro (endereco de endereco)
+    int **mat (primeiro pra linhas, segundo pra colunas)

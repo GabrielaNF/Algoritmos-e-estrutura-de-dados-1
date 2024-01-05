@@ -1,0 +1,32 @@
+*colocar free() sempre no final
+usa stdlib.h
+
+memoria alocada dinamicamente usa ponteiro pra referenciar
+variavel recebe o endereco da memoria (p = (int*) malloc(nomeVar * sizeof(int))) (ou seja, nao precisa referenciar com &x, por exemplo)
+
+void* malloc(size_t x)
+
+ex:
+int main(void){
+    int *p;
+    int amount = 15;
+    p = (int*) malloc(amount * sizeof(int));// int = ponteiro pra inteiro
+return 0;                                   // armazena 15 valores inteiros
+}
+
+se acabar memoria, retorna null
+
+malloc = faz array com posições de memoria (+ rapido e eficiente q o calloc)
+calloc = faz array com posições de memoria e zera todos os valores
+realloc = modifica tamanho de memoria ja alocada (precisa apontar de novo o ponteiro q quer usar)
+          ex. void*realloc (void* ptr, size_t x)
+          nao perde o conteudo da memoria q ja tem
+          realoca como malloc (ou seja, nao zera)
+free = retorna void, so aceita ponteiros alocados dinamicamente, e tem como parametro ponteiro generico = free(p)
+       libera tudo alocado no ponteiro
+
+
+declaracao dinamica dentro da funcao = fica no heap e nao apaga, da pra usar os dados da funcao em outra funcao/main por isso tem q liberar
+"          estatica = nao guarda o valor depois q sai da funcao
+
+usa -> pra acessar cada ponto da struct (ex. v->item)- v aponta pro item

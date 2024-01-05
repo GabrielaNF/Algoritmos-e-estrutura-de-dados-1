@@ -1,0 +1,33 @@
+Exemplo: Torre de Hanoi
+         Sequencia de Fibonacci 
+         MDC (Algoritmo de Euclides)
+         (TENTAR FAZER)
+
+Repeticao
+Funcao que chama a si mesma
+Nao usa laços (for, while, etc)*no max usa na main (usa if)
+Condicao de parada (PRIMEIRA coisa a fazer)
+Modificar seu estado em direcao ao caso base
+
+Parametros empilhados na pilha de execucao
+Programa acaba quando pilha estiver vazia
+
+Programa iterativo eh mais eficiente, rapido e demanda menos trabalho e nao tem trabalho para entrar e sair do bloco e evita empilhar/ desempilhar
+Pragramas recursivos sempre podem ser resolvidos de forma iterativa
+
+
+EX.
+int fatorial(int n){
+    if (n <= 1)
+        return 1;
+
+        else
+        return n * fatorial(n - 1);
+    }
+
+    int main(){
+
+    printf("Fatorial de %d: %d\n", 5, fatorial(5));
+
+return 0;
+    }

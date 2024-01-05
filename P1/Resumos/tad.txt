@@ -1,0 +1,13 @@
+TAD
+-> Biblioteca stdio.h:
+FILE *arq
+fopen() = abre arquivo
+fclose() = fecha o arquivo
+fscanf() = ler do arquivo e gravar
+
+
+-> Modularizacao:
+- Separar em funcoes o que quer fazer
+- Construidos em arquivos separados
+- Cabecalho.h p/ tipo do dado e operacoes em cima
+- arquivo.c p/ modularizar e implemetnar

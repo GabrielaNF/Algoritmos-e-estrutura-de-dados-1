@@ -1,0 +1,38 @@
+Operações básicas em uma lista:
+    Criar uma lista vazia
+    Inserir um elemento
+    Remover um elemento
+    Acessar um elemento
+    Verificar se a lista está vazia
+    Procurar um elemento
+    Concatenar duas ou mais listas
+    Dividir uma lista em duas ou mais listas
+    Ordenar a lista
+    Imprimir todos os elementos
+    Retornar referência (primeiro ou próximo item da lista)
+    Liberar lista
+
+Posicionadas em ordem fisica (sem pular posicoes)
+ex. 12345
+
+
+LISTAS ENCADEADAS
+- Não necessariamente em ordem fisica (podem pular uma posicao)
+ex. 12 35 4
+- Usa ponteiros
+
+
+LISTA ESTATICA
+- Percorrida em qualquer direção
+- Armazena em arrays/ vetores
+- Usa var pra indicar posicao do ultimo elemento(end)
+- Incluir item no fim da lista nao tem custo
+- Remover item tem que deslocar itens pra nao ter espaco vazio
+
+Vantagens
+- Simples implementação
+- Economia de memória
+
+Desvantagens
+- Custo para retirar itens
+- Caso a lista atinja o limite de armazenamento, não é possível realocar memória

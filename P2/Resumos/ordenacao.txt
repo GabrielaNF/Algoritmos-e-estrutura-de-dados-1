@@ -1,0 +1,119 @@
+arquivo de tam n = n items
+i = item
+Ordena por uma chave de num/ string
+Pode ordenar pelos proprios registros ou tabela auxiliar de ponteiros
+mais rapidos = O(n log n)
+
+ORDENACAO POR COMPARACAO = ordena comparando elementos de entrada (apresentados a seguir)
+
+BUBBLESORT
+    vai trocando conforme ve que o elemento anterior>proximo
+    Estavel
+    Facil implementacao
+    Bom para conjuntos pre-Ordenados
+    Cada passagem tem menos 1 comparacao (n-1)
+    Total de comparacoes: ((n^2-n)/2)
+    Um dos metodos MENOS eficiente
+    Complexidade pior caso = O(n^2)
+
+
+SELECTION SORT
+    Coloca o maior elemento por ultimo (ou o menor como primeiro)
+    Repete ate ordenar
+    Complexidade pior caso = O(n^2)
+    Estavel e de simples implementacao
+    Um dos mais rapidos pra ordenar vetores pequenos
+    Um dos mais lentos pra vetores grandes
+
+
+INSERTION SORT
+    Insere informacoes em um conjunto ja ordenado 
+    EX. organizar onde coloca nas cartas na mao em ordem crecente
+    Eficiente pra pequenas entradas
+    Deve usar em um arquivo quase ordenado
+    Desvantagem: Alto custo de movimentacao de elementos
+    Complexidade: pior caso = O(n^2)
+
+
+QUICKSORT
+    Recursivo, dividir e conquistar
+    Divide a lista em sublistas menores
+    esquerda = menores
+    direita = maiores
+    Define-se pivo (r) = media entre posicoes(x[0]+x[n])/2
+    Organiza geral
+    primeiro organiza esquerda, depois direita
+    Metodo nao eh estavel
+    Complexidade: medio/ melhor caso = O(n log n)
+                  pior caso = O(n^2)
+
+
+HEAPSORT
+    *baseia na ordenacao por selecao em arvores binarias
+    Ordena por selecao
+    1° Constroi heap(arvore binaria) - nó pai > nó filhos
+    2° seleciona os elementos na ordem desejada
+    retira o maior numero e poe no array ordenando
+    reorganiza heap
+    repete
+    Nao eh estavel
+    Nao recomendado pra conjuntos pequenos de elementos
+    Complexidade: O(nlog(n)) - pra todos os casos
+
+
+SHELL SORT
+    *Extensao do insertion sort
+    Possibilita troca de registros longe um do outro (problema do insterion sort)
+    Compara elementos com um incremento h
+    Subarranjos do original. EX: se h = 5:
+                                 subarranjo 1 = [0]x[5]x[10]
+                                 subarranjo 2 = [1]x[6]x[11]
+                                 subarranjo 3 = [2]x[7]x[12]
+                                 subarranjo 4 = [3]x[8]x[13]
+    subarranjos ordenados por insertion sort
+    depois da ordenacao dos subarranjos define um incremento menor que o anterior - aplica de novo insertion sort
+    repete ate h = 1
+    se s eh o tam do conjunto, se s = 1, h =1
+                               se s > 1, h = 3h(s-1)+1
+    complexidade: entre O(n^1,25) e O(n^2)
+    Tempo de execucao depende da ordem dos dados
+    dificuldade> escolher incrementos pros melhores resultados
+    Bom para arquivos de tam medio
+    Nao estavel
+
+
+
+ORDENACAO LINEAR
+    O(n)
+    Nao ha comparacao entre elementos
+    Cada elemento eh considerada um inteiro entre 0 e k 
+    Entrada = array A com numeros menores/ iguais  k
+    Saida = Array ordenado B
+    Usa arranjo auxiliar C pra armazenar temporariamente
+
+
+    COUNTING SORT
+        elementos em um intervalo conhecido
+        compara quantas vezes o numero se repete e nao compara numero com numero
+        cria um array auxiliar de contagem para determinar a posição de cada elemento na sequência ordenada
+        podem precisar de memória adicional para armazenar a contagem ou os dígitos
+        conta quantas vezes um numero se repete, depois os coloca em ordem crescente de quantas vezes cada um se repete 
+        depois coloca os maiores por ultimo e vai descendo ate o menor
+        Complexidade: O(n+k) ou O(max(n,k)) ou O(n)
+
+
+ORDENACAO DE STRINGS
+    Ordem alfabetica
+    Compara caractere por caractere
+    Pra diferenciar 2 strings, quantidade de comparacoes depende do num de caracteres
+    string.h
+    funcao strcmp compara cadeias de caracteres: 0 = sao iguais
+                                                  -1 = str1 < str2
+                                                  1 = str1 > str2
+    Ordenacao custosa devido  comparacao entre strings por strcmp E reordena-las
+    Pode diminuir esse custo usando ponteiros
+    Da pra usar os metodos anteriores pra organizar strings, mas eh custosa
+
+
+ORDENACAO EM TAD
+    Tambem aplicada em structs

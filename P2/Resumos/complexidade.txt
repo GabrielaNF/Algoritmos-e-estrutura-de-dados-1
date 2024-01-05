@@ -1,0 +1,17 @@
+ANALISE DE ALGORITMOS
+
+- Quantidade de dados
+- Tempo de execucao
+- Espaco ocupado
+
+Compara algoritmos e nao programas
+
+Calcula numero de operacoes sobre n elementos
+
+Pior caso = O(n)
+
+Operacoes simples = 1 unidade de tempo
+                     Soma, subtacao, multiplicacao, comparacao, atribuicao
+                     += conta como 1 unica operacao
+
+Operacoes complexas demoram mais, tem q analisar

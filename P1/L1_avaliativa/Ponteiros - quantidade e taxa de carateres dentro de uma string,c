@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+void repeating(char str[], char c, int *p, float *ptr){
+    int i, count = *p;
+    for (i = 0; str[i] != '\0'; i++){
+        if(str[i] == c){
+            count++;
+        }
+    }
+    
+    printf("%d\n", count);
+
+    *ptr = (float)count/(float)i;
+    
+    printf("%.2f", *ptr);
+}
+           
+int main() {
+    char str[50];
+    char c;
+    int caracter = 0;
+    float incidencia;
+    float *ptr = &incidencia;
+
+
+    scanf("%50s", str);
+    while (getchar() != '\n');
+    scanf("%c", &c);
+
+    repeating (str, c, &caracter, ptr);
+
+    return 0;
+}

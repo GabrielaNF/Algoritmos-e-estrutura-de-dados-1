@@ -1,0 +1,113 @@
+Recuperacao de informacoes
+
+Chave
+    Interna: dentro do arquivo
+    Externa: tabela de chaves separadas (ponteiro)
+    Primária: cada registro tem um valor exclusivo (Ex. dados do estudante)
+    Secundária: usa pra classificar/ agrupar (Ex. curso-> quantas pessoas cursam ele)
+
+TABELA 
+    Pode ser array, lista encadeada, arvore, etc
+    Pode estar na memoria primaria (memoria real Ex. RAM)
+    Pode estar na memoria secundaria (unidades de armazenamento. EX. pendrive)
+    Pode estar dividida meio a meio em cada memoria
+
+
+BUSCA SEQUENCIAL
+- Precisa ordenar antes de pesquisar (array/ lista encadeada)
+- Na sequencia (pesquisa de 1 em 1) (registro por registro)
+- Sentinela: elimina uma comparacao
+- Vetor/ lista ordenada
+- Lista encadeada
+- Busca sequencial em tabela ordenada (lista duplamente encadeada, acaba quando i e j se cruzam)
+(sendo i comecando da coluna 0 e aumentando, e j comecando da ultima coluna e diminuindo pra encontra i)
+- Array = tamanho fixo, usa lista encadeada pra corrigir
+- Melhor caso: achar de primeira = O(1)
+- Pior caso: Nao achar = O(n)
+
+int busca_sequencial1(int x, int v[], int n){
+    int i;
+
+    for (i = 0; i < n; i++)
+        if (x == v[i])
+            return i;
+
+    return -1;
+}
+
+    Metodo com tabela ordenada e sentinela: inicia nas duas extremidades da tabela e termina quando i e j se cruzam no centro
+                                            Lista duplamente encadeada
+
+    Metodo mover-pra-frente: registro recuperado vai pro comeco da lista
+                             conta quantas vezes cada registro eh acessado
+                             resultado melhor pra pequena e media quantidade de items
+                             Mais custoso para Arrays que em lista encadeadas
+
+    Metodo de transposicao: registro encontrado eh trocado com o anterior
+                            resultado melhor para mais items
+
+
+BUSCA SEQUENCIAL INDEXADA 
+- tira tabela de indices pra fora (tabela auxiliar)
+- indices = posicao
+- Busca feita na tabela auxiliar (de indices)
+- Cada elemento dessa tabela tem uma chave kindex e um indicador no arquivo que corresponde a ele
+- busca feita a partir do ponto indicado na tabela
+- Acha possivel posicao(indice) em que o valor está e procura nele
+- Vantagem: Acessa ser ter que acessar todos os items
+- Desvantagem: Espaco adicional pra tabela de indices
+               tabela tem que estar ordenada
+*pode usar tabela de indice adicional
+
+1) ordenar tabela
+2) Tabela de indice de n/m posicoes (n tam da tabela e m tam do indice)
+- indice = 2(m-1)*(n/m) pra achar o item
+- Complexidade: O(max(m,n/m))
+                O(m+n/m)
+
+
+BUSCA BINARIA
+- Ordenados em array
+- Comeca do meio da tabela: Se for igual a chave, busca bem sucedida
+                            Se chave for menor, busca na metade inferior
+                            Se chave for maior, busca na metade superior
+- Divide o tamanho do array por 2 a cada passo ate achar
+- Complexidade: O(log n) (a cada comparacao, divide candidatos a metade)
+- Vantagens: Eficiencia
+             Facil implementacao
+-Desvantagens: Nem todo array esta ordenado
+               Usa array pra armazenar dados
+               Nao da pra usar em lista encadeada pois nao tem acesso a indices (teria q usar arvore binaria)
+- Pode usar com tabela indexada (inves de pesquiar sequencia)
+                                Complexidade: O(max(log(m),log(n/m)))
+                                m = tam tabela indices
+                                n = tam do arquivo
+
+
+BUSCA POR INTERPOLACAO
+- Chaves estiverem uniformemente distribuidas = O(log(log n))
+- Pode ser mais eficiente q busca binaria
+- meio = ini + (fim − ini) ∗(x−v[ini]/v[fim]−v[ini]) 
+    ini = 1
+    fim = n posicoes
+    x = valor da chave que esta procurando
+    v[ini]= valor na posicao inicial
+    v[fim] = valor na posicao final
+- Se nao estiverem uniformes, complexidade eh O(n)
+- Desvantagem: nao tendem a estar uniformemente distribuidas
+
+
+ARVORE BINARIA DE BUSCA
+    Eficiente pra armazenar informacoes (inclusive de forma hierarquica)
+    Conjunto finito de nos
+    no raiz (r) com 0 ou mais sub-arvores
+    cada sub-arvore tem seu nó raiz, descendente de r (nó filho)
+    Nós folha não tem filhos
+    Arvore binaria = cada nó tem 1 ou 2 filhos somente (exceto nós folhas)
+    Arvore = struct: Informacao
+                     Sub-arvore esquerda (chaves menores que da raiz)
+                     Sub-arvore direita (chaves maiores que da raiz)
+    Ve se o nó raiz ja eh a chave, se nao, usa recursao se eh maior/ menor
+    Complexidade: melhor = O(1)
+                  medio = O(log n)
+                  pior = O(n)
